@@ -1,2 +1,2 @@
-# OpenSourcePBXKamailio_VM
-Virtuální stroje použité v závěrečné práci.
+# OpenSourcePBXKamailio
+Virtual machines used in bachelor's thesis.
