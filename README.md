@@ -1,6 +1,6 @@
 # SIP proxy Kamailio & PBX Asterisk configuration guide
 
-This guide explains how to install and apply Kamailio and Asterisk configuration files provided in the project repository. It assumes a Linux environment (recommended: Ubuntu 24.04 LTS).
+This guide explains how to install and apply Kamailio and Asterisk configuration files provided in the project repository. It assumes a Linux environment (recommended: Ubuntu 24.04.4 LTS).
 
 ## Overview
 
@@ -18,7 +18,7 @@ Ensure the following software is installed:
 ## Clone the repository
 
 ```bash
-https://github.com/256768/OpenSourcePBXKamailio
+https://github.com/256768/OpenSourcePBXKamailiohttps://github.com/256768/OpenSourcePBXKamailio/releases/new
 cd OpenSourcePBXKamailio/
 ```
 
