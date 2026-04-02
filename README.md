@@ -133,6 +133,10 @@ Inside Asterisk CLI:
 ```bash
 pjsip show endpoints
 ```
+## Disclaimer
+This project is currently under active development and is not considered stable. Features may change, break, or be removed at any time without prior notice.
+Use this software at your own risk. The author provides no guarantees regarding functionality, reliability, or suitability for any purpose and are not responsible for any damage or issues caused by its use.
+This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ---
 ---
