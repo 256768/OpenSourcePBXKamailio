@@ -11,9 +11,8 @@ The repository contains preconfigured files for:
 The goal is to properly place these configuration files into system directories and ensure both services run with the provided setup.
 
 ## Prerequisites
-
-Installed required software:
-- PBX Asterisk v22.5.2 **(USING PJSIP!)**
+Ensure the following software is installed:
+- PBX Asterisk v22.5.2 **(with PJSIP support)**
 - SIP proxy Kamailio v6.0.3
 
 ## Clone the repository
