@@ -136,7 +136,6 @@ pjsip show endpoints
 ## Notes
 
 - Ensure no port conflicts (Kamailio and Asterisk must not be running at the same time).
-- If using both together, Kamailio typically acts as a SIP proxy routing calls to Asterisk.
 - Firewall must allow SIP (port 5060)
 
 
