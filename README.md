@@ -133,6 +133,26 @@ Inside Asterisk CLI:
 ```bash
 pjsip show endpoints
 ```
+## Notes
+
+- Ensure no port conflicts (Kamailio and Asterisk must not be running at the same time).
+- If using both together, Kamailio typically acts as a SIP proxy routing calls to Asterisk.
+- Firewall must allow SIP (port 5060)
+
+
+## Troubleshooting
+These configuration files should not contain any errors, in case of errors (for example the SIP proxy/PBX exiting) you can view logs by:
+
+**Kamailio:**
+```bash
+journalctl -u kamailio -f
+```
+
+**Asterisk:**
+```bash
+journalctl -u asterisk -f
+```
+
 ## Disclaimer
 This project is currently under active development and is not considered stable. Features may change, break, or be removed at any time without prior notice.
 Use this software at your own risk. The author provides no guarantees regarding functionality, reliability, or suitability for any purpose and are not responsible for any damage or issues caused by its use.
