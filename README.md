@@ -26,7 +26,7 @@ apt update && apt install docker.io docker-compose git
 ## Clone the repository
 
 ```bash
-https://github.com/256768/OpenSourcePBXKamailiohttps://github.com/256768/OpenSourcePBXKamailio/releases/new
+https://github.com/256768/OpenSourcePBXKamailio
 cd OpenSourcePBXKamailio/
 ```
 
@@ -34,7 +34,7 @@ cd OpenSourcePBXKamailio/
 
 ### Locate configuration files
 
-Kamailio configs are typically located in */etc/* under:
+Kamailio configs are typically located in */etc/* or */usr/local/etc* directory under:
 
 ```
 kamailio/
