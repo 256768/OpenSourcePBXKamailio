@@ -17,7 +17,7 @@ Ensure the following software is installed:
 - PBX Asterisk v22.5.2 **(with PJSIP support)**
 - SIP proxy Kamailio v6.0.3
 - 
-First, install all necessary prerequisites for :
+First, install all necessary prerequisites for Homer 7:
 
 ```bash
 apt update && apt install docker.io docker-compose git
