@@ -155,7 +155,7 @@ These packages can be installed via Docker, run the following in terminal.
 Homer 7 pulls also the Prometheus and node-exporter packages, but it is necessary to edit them afterwards, so install Homer 7 first.
 Clone the Homer 7 repository:
 ```bash
-git clone [https://github.com/sipcapture/homer7-docker](https://github.com/sipcapture/homer7-docker)
+git clone https://github.com/sipcapture/homer7-docker
 ```
 Navigate to the directory:
 ```bash
