@@ -16,7 +16,7 @@ The goal is to properly place these configuration files into system directories 
 Ensure the following software is installed:
 - PBX Asterisk v22.5.2 **(with PJSIP support)**
 - SIP proxy Kamailio v6.0.3
-- 
+  
 First, install all necessary prerequisites for Homer 7:
 
 ```bash
@@ -191,7 +191,7 @@ docker run -d --name nodeexporter --restart unless-stopped -p 9100:9100 -v "/pro
 - Ensure no port conflicts (Kamailio and Asterisk must not be running at the same time).
 - Firewall must allow SIP (port 5060).
 - When installing packages via Docker, create the configuration file first.
-- Ensure that the _kamailio_ and _asterisk_ binaries are present in the specified paths (```/usr/local/sbin/kamailio``` and ```/usr/sbin/asterisk```).
+- Ensure that the *kamailio* and *asterisk* binaries are present in the specified paths (```/usr/local/sbin/kamailio``` and ```/usr/sbin/asterisk```).
 
 
 ## Troubleshooting
