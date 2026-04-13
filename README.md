@@ -141,15 +141,30 @@ Inside Asterisk CLI:
 ```bash
 pjsip show endpoints
 ```
-### Docker setup
+## Docker setup
 For monitoring purposes it is necessary to install following packages:
-- Homer
+- Homer 7
 - Prometheus
 - Grafana
 - process-exporter
 - node-exporter
 
 These packages can be installed via Docker, run the following in terminal.
+
+### Homer 7
+Homer 7 pulls also the Prometheus and node-exporter packages, but it is necessary to edit them afterwards, so install Homer 7 first.
+Clone the Homer 7 repository:
+```bash
+git clone [https://github.com/sipcapture/homer7-docker](https://github.com/sipcapture/homer7-docker)
+```
+Navigate to the directory:
+```bash
+cd homer7-docker/heplify-server/hom7-prom-all
+```
+Start the Docker container:
+```bash
+docker-compose up -d
+```
 
 ### Prometheus
 Insert the ```prometheus.yml``` configuration file into the ```/etc/prometheus/``` directory and then run: 
@@ -169,19 +184,6 @@ docker run -d --name process-exporter -p 9256:9256 -v /etc/process_exporter/proc
 Run to install: 
 ```bash
 docker run -d --name nodeexporter --restart unless-stopped -p 9100:9100 -v "/proc:/host/proc:ro" -v "/sys:/host/sys:ro" -v "/:/rootfs:ro,rslave" prom/node-exporter:latest --path.procfs=/host/proc --path.sysfs=/host/sys --path.rootfs=/rootfs
-```
-### Homer 7
-Clone the Homer 7 repository:
-```bash
-git clone [https://github.com/sipcapture/homer7-docker](https://github.com/sipcapture/homer7-docker)
-```
-Navigate to the directory:
-```bash
-cd homer7-docker/heplify-server/hom7-prom-all
-```
-Start the Docker container:
-```bash
-docker-compose up -d
 ```
 
 ## Notes
