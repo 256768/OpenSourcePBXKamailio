@@ -1,0 +1,8 @@
+process_names:
+  - name: "kamailio"
+    cmdline:
+      - "^/usr/local/sbin/kamailio"
+
+  - name: "asterisk"
+    cmdline:
+      - "^/usr/sbin/asterisk"
