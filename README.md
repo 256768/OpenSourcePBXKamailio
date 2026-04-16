@@ -214,7 +214,7 @@ docker run -dt --name easySIPp --network host --name easysipp -v easysipp/forms.
 
 
 ## Troubleshooting
-These configuration files should not contain any errors, in case of errors (for example the SIP proxy/PBX exiting) you can view logs by:
+In case of errors (for example the SIP proxy/PBX exiting) you can view logs by:
 
 **Kamailio:**
 ```bash
