@@ -18,7 +18,7 @@ Ensure the following software is installed:
 - SIP proxy Kamailio v6.0.3 **(with MySQL module)**
 - MariaDB server used for Kamailio
   
-First, install all necessary prerequisites for Homer 7:
+First, install all necessary prerequisites:
 
 ```bash
 apt update && apt install docker.io docker-compose git
