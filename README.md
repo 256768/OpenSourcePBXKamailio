@@ -27,7 +27,7 @@ apt update && apt install docker.io docker-compose git
 ## Clone the repository
 
 ```bash
-https://github.com/256768/OpenSourcePBXKamailio
+git clone https://github.com/256768/OpenSourcePBXKamailio
 cd OpenSourcePBXKamailio/
 ```
 
