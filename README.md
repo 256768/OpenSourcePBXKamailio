@@ -203,7 +203,7 @@ docker run -d --name process-exporter -p 9256:9256 -v /etc/process_exporter/proc
 ### EasySIPp
 Install by running:
 ```bash
-docker run -dt --name easySIPp --network host --name easysipp -v easysipp/forms.py:/app/easySIPp/forms.py krndwr/easysipp -p 8080:8080
+docker run -dt --name easysipp -v easysipp/forms.py:/app/easySIPp/forms.py krndwr/easysipp -p 8080:8080
 ```
 
 
