@@ -23,9 +23,12 @@ First, install all necessary prerequisites:
 ```bash
 apt update && apt install docker.io docker-compose git
 ```
+And now create directories for configuration files:
+```bash
+mkdir -p /etc/prometheus /etc/process_exporter
+```
 
 ## Clone the repository
-
 ```bash
 git clone https://github.com/256768/OpenSourcePBXKamailio
 cd OpenSourcePBXKamailio/
@@ -78,7 +81,11 @@ Check status:
 ```bash
 sudo systemctl status kamailio
 ```
-
+Create the database:
+```bash
+kamdbctl create
+```
+Here you will have to choose the correct encoding.
 
 ## Asterisk configuration
 
