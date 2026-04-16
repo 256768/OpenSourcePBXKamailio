@@ -16,6 +16,7 @@ The goal is to properly place these configuration files into system directories 
 Ensure the following software is installed:
 - PBX Asterisk v22.5.2 **(with PJSIP support)**
 - SIP proxy Kamailio v6.0.3 **(with MySQL module)**
+- MariaDB server used for Kamailio
   
 First, install all necessary prerequisites for Homer 7:
 
