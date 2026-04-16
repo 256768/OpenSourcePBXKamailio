@@ -57,6 +57,8 @@ Copy configuration files:
 ```bash
 sudo cp -r kamailio/* /etc/kamailio/ # or /usr/local/etc/kamailio/
 ```
+**Important**: it is necessary to edit the ```kamctlrc``` file, too, but for security reasons, the exact configuration file won't be published in this repository. It is necessary to uncomment these variables:
+```SIP_DOMAIN```, ```DBENGINE```, ```DBHOST```, ```DBRWUSER```, ```DBRWPW```, ```DBROUSER``` and ```DBROPW```. By default, the variables should work as they are (if you did not change the DB password, etc.), except for SIP_DOMAIN. Set this variable to your domain, for example ```sip.yourdomain.org``` or your server IP address, for example ```192.168.128.1```. Please note, that the ```kamctlrc``` configuration file can be located both in locations ```/etc/kamailio/kamctlrc``` and ```/usr/local/etc/kamailio/kamctlrc```. Make sure you edit the one that corresponds to your installation prefix, or use a symbolic link to ensure kamctl can find your configuration.
 
 ### Adjust permissions
 
