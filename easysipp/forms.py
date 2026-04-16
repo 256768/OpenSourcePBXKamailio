@@ -27,7 +27,7 @@ class UACForm(forms.ModelForm):
     uac_remote = forms.GenericIPAddressField(
         label='UAC Remote Address', 
         protocol='IPv4', 
-        initial='192.168.10.188',
+        initial='<server-ip-address>',
         widget=forms.TextInput(attrs={'readonly': 'readonly'})
     )
     uac_remote_port = forms.IntegerField(
@@ -101,7 +101,7 @@ class UACForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         
         # nastaveni pocatecnich hodnot: IP adresa a port
-        self.initial['uac_remote'] = '192.168.10.188'
+        self.initial['uac_remote'] = '<server-ip-address>'
         self.initial['uac_remote_port'] = 5060
         
         self.fields['select_uac'].choices = self._get_xml_file_choices('uac')
@@ -115,7 +115,7 @@ class UACForm(forms.ModelForm):
     # if user changes the value of the input field (for example in the source code of the webpage), this function overrides the values of IP address and port and sets them to the intended values
     def clean(self):
         cleaned_data = super().clean()
-        cleaned_data['uac_remote'] = '192.168.10.188'
+        cleaned_data['uac_remote'] = '<server-ip-address>'
         cleaned_data['uac_remote_port'] = 5060
         return cleaned_data
 
@@ -159,7 +159,7 @@ class UASForm(forms.ModelForm):
     uas_remote = forms.GenericIPAddressField(
         label='UAS Remote Address', 
         protocol='IPv4',
-        initial='192.168.10.188',
+        initial='<server-ip-address>',
         widget=forms.TextInput(attrs={'readonly': 'readonly'})
     )
     uas_remote_port = forms.IntegerField(
@@ -190,7 +190,7 @@ class UASForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         
         # sets the initial values for IP address and port in the input field
-        self.initial['uas_remote'] = '192.168.10.188'
+        self.initial['uas_remote'] = '<server-ip-address>'
         self.initial['uas_remote_port'] = 5060
         
         self.fields['select_uas'].choices = self._get_xml_file_choices('uas')
@@ -200,7 +200,7 @@ class UASForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
-        cleaned_data['uas_remote'] = '192.168.10.188'
+        cleaned_data['uas_remote'] = '<server-ip-address>'
         cleaned_data['uas_remote_port'] = 5060
         return cleaned_data
 
