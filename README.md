@@ -2,6 +2,8 @@
 
 This guide explains how to install and apply Kamailio and Asterisk configuration files provided in the project repository. It assumes a Linux environment (recommended: Ubuntu 24.04.4 LTS).
 
+Note: Do not run both services at the same time. The environment is configured so that students can switch between services (measure one, deactivate, then measure the other) without reconfiguring the system. This structure also ensures that future lab administrators have a clear baseline for how the tasks were originally architected.
+
 ## Overview
 
 The repository contains preconfigured files for:
