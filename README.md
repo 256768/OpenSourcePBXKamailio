@@ -189,6 +189,12 @@ Insert the ```process-exporter.yml``` configuration file into the ```/etc/proces
 ```bash
 docker run -d --name process-exporter -p 9256:9256 -v /etc/process_exporter/process-exporter.yml:/config/config.yml -v /proc:/host/proc ncabatoff/process-exporter -config.path /config/config.yml -procfs /host/proc
 ```
+### EasySIPp
+Install by running:
+```bash
+docker run -dt --name easySIPp --network host --name easysipp -v easysipp/forms.py:/app/easySIPp/forms.py krndwr/easysipp -p 8080:8080
+```
+
 
 ## Notes
 
