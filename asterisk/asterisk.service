@@ -1,0 +1,27 @@
+[Unit]
+Description=Asterisk Open Source PBX
+Documentation=man:asterisk(8)
+After=network.target network-online.target syslog.target local-fs.target remote-fs.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/asterisk
+User=<username>
+Group=<username>
+
+LimitNOFILE=100000
+LimitCORE=infinity
+
+ExecStart=/usr/sbin/asterisk -f -U <username> -G <groupname> -g
+
+ExecReload=/usr/sbin/asterisk -rx 'module reload'
+
+Restart=on-failure
+RestartSec=2
+
+StartLimitInterval=60s
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target
