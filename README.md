@@ -93,7 +93,7 @@ Here you will have to choose the correct encoding.
 
 ### Locate configuration files
 
-Asterisk configuration files are located in:
+Asterisk configuration files are located in (OS):
 
 ```
 asterisk/
@@ -114,7 +114,9 @@ Default Asterisk config directory:
 Copy files:
 
 ```bash
-sudo cp -r asterisk/* /etc/asterisk/
+**sudo cp -r asterisk/extensions.conf /etc/asterisk/
+**sudo cp -r asterisk/pjsip.conf /etc/asterisk/
+**sudo cp -r asterisk/asterisk.service /etc/systemd/system/
 ```
 
 ### Set permissions
@@ -205,7 +207,16 @@ Install by running:
 ```bash
 docker run -dt --name easysipp -v easysipp/forms.py:/app/easySIPp/forms.py krndwr/easysipp -p 8080:8080
 ```
-
+## IP config
+It is necessary to change the IP address configuration in these files:
+´´´bash
+kamailio.cfg
+pjsip.conf
+asterisk.service
+prometheus.yml
+forms.py
+´´´
+There are placeholders *<server-ip-address>*, *<client-ip-address>* and *<port>*. You need to replace these.
 
 ## Notes
 
