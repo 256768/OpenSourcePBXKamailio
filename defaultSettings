@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cat /etc/asterisk/pjsip_default.conf > /etc/asterisk/pjsip.conf
+
+echo "List of Kamailio users:"
+kamctl db show subscriber | grep -E '^\|[[:space:]]+[0-9]'
+
+for user in $(kamctl db query "SELECT username FROM subscriber" | grep -v "username" | tr -d '| '); do
+    if [[ "$user" != "sipp" && "$user" != "service" ]]; then
+        echo "Deleting user: $user"
+        kamctl rm "$user"
+    fi
+done
+
+echo "Stopping asterisk service"
+sudo systemctl stop asterisk
+echo "Stopping kamailio service"
+sudo systemctl stop kamailio
+
+echo "Default settings set."
