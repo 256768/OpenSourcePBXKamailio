@@ -209,20 +209,20 @@ docker run -dt --name easysipp -v easysipp/forms.py:/app/easySIPp/forms.py krndw
 ```
 ## IP config
 It is necessary to change the IP address configuration in these files:
-´´´bash
+```bash
 kamailio.cfg
 pjsip.conf
 asterisk.service
 prometheus.yml
-forms.py
-´´´
+```
+
 There are placeholders *<server-ip-address>*, *<client-ip-address>* and *<port>*. You need to replace these.
 
 ### Scripts
-Copy the ´´´defaultSettings´´´ script to your ´´´/usr/bin/´´´ directory:
-´´´bash
+Copy the ```defaultSettings``` script to your ```/usr/bin/``` directory:
+```bash
 cp -r scripts/defaultSettings /usr/bin
-´´´
+```
 
 ## Notes
 
