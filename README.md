@@ -216,7 +216,7 @@ asterisk.service
 prometheus.yml
 ```
 
-There are placeholders *<server-ip-address>*, *<client-ip-address>* and *<port>*. You need to replace these.
+There are placeholders ```<server-ip-address>```, ```<client-ip-address>``` and ```<port>```. You need to replace these.
 
 ### Scripts
 Copy the ```defaultSettings``` script to your ```/usr/bin/``` directory:
