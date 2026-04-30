@@ -218,6 +218,12 @@ forms.py
 ´´´
 There are placeholders *<server-ip-address>*, *<client-ip-address>* and *<port>*. You need to replace these.
 
+### Scripts
+Copy the ´´´defaultSettings´´´ script to your ´´´/usr/bin/´´´ directory:
+´´´bash
+cp -r scripts/defaultSettings /usr/bin
+´´´
+
 ## Notes
 
 - Ensure no port conflicts (Kamailio and Asterisk must not be running at the same time).
