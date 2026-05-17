@@ -158,7 +158,6 @@ pjsip show endpoints
 
 ## Docker setup
 For monitoring purposes it is necessary to install following packages:
-- Homer 7
 - Prometheus
 - Grafana
 - node-exporter
@@ -166,46 +165,27 @@ For monitoring purposes it is necessary to install following packages:
 
 These packages can be installed via Docker, run the following in terminal.
 
-### Homer 7
-Homer 7 pulls also the Prometheus, Grafana and node-exporter packages, but it is necessary to edit them afterwards, so install Homer 7 first.
-Clone the Homer 7 repository:
-```bash
-git clone https://github.com/sipcapture/homer7-docker
-```
-Navigate to the directory:
-```bash
-cd homer7-docker/heplify-server/hom7-prom-all
-```
-Start the Docker container:
-```bash
-docker-compose up -d
-```
-
 ### Prometheus
 Insert the ```prometheus.yml``` configuration file into the ```/etc/prometheus/``` directory and then run: 
 ```bash
-docker stop prometheus
-docker rm prometheus
-docker run -d --name prometheus -p 9090:9090 -v /etc/prometheus/prometheus.yml:/config/config.yml prom/prometheus:latest --config.file=/config/config.yml
+docker run -d --name prometheus --restart unless-stopped -p 9090:9090 -v /etc/prometheus/prometheus.yml:/config/config.yml prom/prometheus:latest --config.file=/config/config.yml
 ```
 
 ### node-exporter
 Run to install: 
 ```bash
-docker stop nodeexporter
-docker rm nodeexporter
 docker run -d --name nodeexporter --restart unless-stopped -p 9100:9100 -v "/proc:/host/proc:ro" -v "/sys:/host/sys:ro" -v "/:/rootfs:ro,rslave" prom/node-exporter:latest --path.procfs=/host/proc --path.sysfs=/host/sys --path.rootfs=/rootfs
 ```
 
 ### process-exporter
 Insert the ```process-exporter.yml``` configuration file into the ```/etc/process_exporter/``` directory and then run: 
 ```bash
-docker run -d --name process-exporter -p 9256:9256 -v /etc/process_exporter/process-exporter.yml:/config/config.yml -v /proc:/host/proc ncabatoff/process-exporter -config.path /config/config.yml -procfs /host/proc
+docker run -d --name process-exporter --restart unless-stopped -p 9256:9256 -v /etc/process_exporter/process-exporter.yml:/config/config.yml -v /proc:/host/proc ncabatoff/process-exporter -config.path /config/config.yml -procfs /host/proc
 ```
 ### EasySIPp
-Install by running:
+Install (on client device!) by running:
 ```bash
-docker run -dt --name easysipp -v easysipp/forms.py:/app/easySIPp/forms.py krndwr/easysipp -p 8080:8080
+docker run -dt --name easysipp --restart unless-stopped -v easysipp/forms.py:/app/easySIPp/forms.py krndwr/easysipp -p 8080:8080
 ```
 ## IP config
 It is necessary to change the IP address configuration in these files:
