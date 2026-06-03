@@ -185,7 +185,7 @@ docker run -d --name process-exporter --restart unless-stopped -p 9256:9256 -v /
 ### EasySIPp
 Install (on client device!) by running:
 ```bash
-docker run -dt --name easysipp --restart unless-stopped -v easysipp/forms.py:/app/easySIPp/forms.py krndwr/easysipp -p 8080:8080
+docker run -dt --name easysipp --restart unless-stopped --net=host -v easysipp/forms.py:/app/easySIPp/forms.py krndwr/easysipp
 ```
 ## IP config
 It is necessary to change the IP address configuration in these files:
